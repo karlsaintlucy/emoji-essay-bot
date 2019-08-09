@@ -37,8 +37,6 @@ def webhook():
 
                 if messaging_event.get("message"):
 
-                    log("The app is noting that a message event is happening.")
-
                     sender_id = messaging_event["sender"]["id"]
                     recipient_id = messaging_event["recipient"]["id"]
                     message_text = messaging_event["message"]["text"]
