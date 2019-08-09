@@ -1,21 +1,19 @@
 import sqlite3
 
-DB_NAME = 'emojis.db'
+from db_connect import connect_to_db, disconnect_from_db
 
 
 def count_emojis():
     """Run a query to get the total number of emojis."""
 
-    conn = sqlite3.connect(DB_NAME)
-    c = conn.cursor()
+    conn, c = connect_to_db()
 
     c.execute("""
-        SELECT COUNT(*) FROM emojis
+        SELECT COUNT(*) FROM emojis;
     """)
     count = c.fetchone()[0]
 
-    conn.commit()
-    conn.close()
+    disconnect_from_db(conn, c)
 
     return count
 

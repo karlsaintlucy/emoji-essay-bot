@@ -1,5 +1,5 @@
 import os
-import psycopg2
+import psycopg2  # pylint:disable=import-error
 
 from urllib.parse import urlparse
 
