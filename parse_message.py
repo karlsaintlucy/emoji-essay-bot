@@ -36,7 +36,7 @@ def parse_message(text):
     emoji = emoji_generator(emojis)
 
     for i in range(len(new_words)):
-        if new_words[i] == None:
+        if new_words[i] is None:
             new_words[i] = next(emoji)
 
     new_text = ' '.join(new_words)
