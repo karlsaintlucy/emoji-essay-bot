@@ -16,6 +16,7 @@ VERIFY_TOKEN = os.getenv("EMOJI_ESSAY_BOT_VERIFY_TOKEN")
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("EMOJI_ESSAY_BOT_DB_URL")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
